@@ -28,17 +28,16 @@ console.log("Program in progress...");
 
 promiseOne.then(()=>{
     console.log("Step 1 complete");
-    const promiseTwo = new Promise((resolve, reject)=>{
+    return new Promise((resolve, reject)=>{
         setTimeout(function(){
             resolve("Step 2 complete")
         }, 3000)
     })
-    promiseTwo.then((message)=>{
-        console.log("second promise is printed after 3 sec");
-        console.log(message);
-        
-        
-    })
+})
+.then((message)=>{
+    console.log("second promise is printed after 3 sec");
+    console.log(message);
+    
     
 })
 .catch((error) => {
